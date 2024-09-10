@@ -1,49 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:food_app/Home.dart';
-import 'dart:math'as math;
 
-class Splashscreen extends StatefulWidget {
+class Splashscreen extends StatelessWidget {
   const Splashscreen({super.key});
 
   @override
-  State<Splashscreen> createState() => _SplashscreenState();
-}
-
-class _SplashscreenState extends State<Splashscreen>with TickerProviderStateMixin {
-  late AnimationController _controller=AnimationController(
-      duration: Duration(seconds: 3),
-      vsync: this)..repeat();
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.delayed(Duration(seconds: 3),() => Navigator.push(context,MaterialPageRoute(builder: (context) => Home(),)),);
-  }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Column(
+      body: Stack(
         children: [
-          Expanded(child: Image(image: AssetImage("assets/images/bur.png"))),
-          AnimatedBuilder(
-            child: Column(
-              children: [
-                Text("Hunger Mart",style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                ),),
-              ],
+          // Background image
+          Positioned.fill(
+            child: Image.asset(
+              "assets/images/back.png",
+              fit: BoxFit.cover,
             ),
-            animation: _controller,
-              builder: (BuildContext context,Widget? child,) {
-                return Transform.scale(
-                  scale: _controller.value*1.2*math.pi,
-                  child: child,
-                );
-              },),
-          Expanded(child: Image(image: AssetImage("assets/images/piza.png"))),
+          ),
+          // Splash screen animation
+          AnimatedSplashScreen(
+            animationDuration: Duration(seconds: 3),
+            splash: SizedBox.shrink(),
+            splashTransition: SplashTransition.sizeTransition,
+            nextScreen: Home(),
+            backgroundColor: Colors.transparent, // Ensure transparent background
+          ),
         ],
       ),
     );
