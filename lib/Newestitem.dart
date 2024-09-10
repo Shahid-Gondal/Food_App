@@ -56,7 +56,7 @@ class Newestitem extends StatelessWidget {
                             width: 190,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(left: 10),
@@ -104,24 +104,15 @@ class Newestitem extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 70),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.favorite_border,
-                                  color: Colors.red,
-                                ),
-                              ],
-                            ),
-                          ),
+
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 320),
+                        padding: const EdgeInsets.only(left: 270),
                         child: Icon(
                           CupertinoIcons.cart_fill,
                           color: Colors.red,

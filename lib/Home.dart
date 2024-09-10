@@ -18,9 +18,15 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         actions: [
-          IconButton(onPressed: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context) => Notify(),));
-          }, icon: Icon(Icons.notifications_active))
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Notify(),
+                    ));
+              },
+              icon: Icon(Icons.notifications_active))
         ],
       ),
       body: Container(
@@ -48,6 +54,7 @@ class Home extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
                         Icons.search,
@@ -63,6 +70,7 @@ class Home extends StatelessWidget {
                               hintText: "What would you Like to have?",
                               border: InputBorder.none,
                               hintStyle: TextStyle(color: Colors.grey),
+                              
                             ),
                           ),
                         ),

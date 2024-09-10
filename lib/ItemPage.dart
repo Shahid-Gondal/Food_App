@@ -114,7 +114,7 @@ class ItemPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                           children: [
                             Text(
                               "Delivery Time:",
@@ -126,7 +126,7 @@ class ItemPage extends StatelessWidget {
                             Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 120),
+                                  padding: const EdgeInsets.only(left: 100),
                                   child: Icon(CupertinoIcons.clock),
                                 ),
                               ],
