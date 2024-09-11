@@ -114,7 +114,7 @@ class ItemPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15),
                         child: Row(
-
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Delivery Time:",
@@ -123,14 +123,7 @@ class ItemPage extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 100),
-                                  child: Icon(CupertinoIcons.clock),
-                                ),
-                              ],
-                            ),
+                            Icon(CupertinoIcons.clock),
                             Text(
                               "30 Minutes",
                               style: TextStyle(
